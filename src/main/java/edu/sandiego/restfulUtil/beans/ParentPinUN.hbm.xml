@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="restfulUtil.beans.ParentPinUN">
+        <id name="parent_id"/>
+        <property name="parent_pin"/>
+        <property name="email_address"></property>
+            
+    </class>
+	
+	<sql-query name="get_parent_ID_info">
+      <return alias="" class="restfulUtil.beans.ParentPinUN">
+        <return-property name="parent_id" column="parentId"/>
+        <return-property name="parent_pin" column="parentPin"/>
+        <return-property name="email_address" column="emailAddress"/>
+           
+      </return>
+      
+      <![CDATA[
+      select a.SPRIDEN_ID as parentId, g.GOBTPAC_PIN as parentPin, e.GOREMAL_EMAIL_ADDRESS as emailAddress
+      from SPRIDEN a, GOBTPAC g, GOREMAL e
+      where
+      a.SPRIDEN_PIDM=g.GOBTPAC_PIDM
+      and a.SPRIDEN_CHANGE_IND is null
+      and e.GOREMAL_PIDM=g.GOBTPAC_PIDM
+      and GOBTPAC_PIDM=:parentPidm
+      
+      
+      ]]>
+      
+      
+
+    </sql-query>
+</hibernate-mapping>

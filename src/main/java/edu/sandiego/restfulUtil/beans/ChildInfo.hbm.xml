@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="restfulUtil.beans.ChildInfo">
+        <id name="pidm"/>
+        <property name="last_name"/>
+        <property name="first_name"/>    
+    </class>
+	
+	<sql-query name="getChildInfo">
+      <return alias="" class="restfulUtil.beans.ChildInfo">
+        <return-property name="pidm" column="pidm"/>
+        <return-property name="last_name" column="lastname"/>
+        <return-property name="first_name" column="firstname"/>   
+      </return>
+      select 
+      s.spriden_pidm as pidm,
+      s.spriden_first_name as firstName,
+      s.spriden_last_name as lastName
+      from
+      baninst1.web4parent_xref w,
+      SPRIDEN s
+      where s.spriden_pidm = w.student_pidm
+      and SPRIDEN_CHANGE_IND is null
+      and w.PARENT_PIDM =:parentPidm
+    </sql-query>
+</hibernate-mapping>

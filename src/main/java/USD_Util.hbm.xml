@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<!--input: PIDM  -->
+<sql-query name="getBannerID">
+        <return-scalar column="banner_id" type="string"/>
+       <![CDATA[ select SPRIDEN_ID as banner_id
+        from SPRIDEN
+        where SPRIDEN_pidm = :pidm
+        and SPRIDEN_CHANGE_IND is null]]>
+    </sql-query>
+    
+ 
+  
+    
+    <!--input: username -->
+<sql-query name="getPidm_Username">
+        <return-scalar column="gobtpac_pidm" type="int"/>
+       <![CDATA[ select gobtpac_pidm from gobtpac where gobtpac_external_user=:username]]>
+    </sql-query>
+    
+   <!--input Spriden/Banner ID  --> 
+    <sql-query name="getPidm_SpridenID">
+        <return-scalar column="pidm" type="integer"/>
+       <![CDATA[
+       select spriden_pidm as pidm
+       from spriden
+       where
+       spriden_id=:id
+       and
+       spriden_change_ind is null
+       
+       ]]>
+    </sql-query>
+    
+    <!--input PIDM,BannerID  -->
+     <sql-query name="getRoles">
+        <return-scalar column="role" type="string"/>
+        select gorirol_role as role
+        from gorirol, spriden
+        where SPRIDEN_ID = :bannerId
+        and SPRIDEN_CHANGE_IND is null
+        and gorirol_pidm=spriden_pidm
+    </sql-query>
+    
+    
+    
+     <!--input CRN,TERM  -->
+     <sql-query name="getSeatingChart">
+        <!-- <return-scalar column="room_no" type="string"/> -->
+        <return-scalar column="room_no" type="string"/>
+        <!-- <return-scalar column="banner_id" type="string"/>
+        <return-scalar column="fullname" type="string"/>
+        <return-scalar column="crn" type="string"/>
+        <return-scalar column="term_code" type="string"/> -->
+       <![CDATA[ select room_no as room_no from usd_room_seat 
+       where crn= :crn 
+       and 
+       term_code= :term 
+       and 
+       banner_id is not null]]>
+    </sql-query>
+    
+    <!--input PIDM  -->
+    	<sql-query name="get_banner_channel_html" callable="true">
+		<return-scalar column="retVal" type="string" />
+		<![CDATA[? = call usd_financial_aid_status.f_get_dispsumm(:pidm)]]> 
+	</sql-query>
+	
+	
+	
+	
+	
+	
+		<sql-query name="checkHold" callable="true">
+		<return-scalar column="retVal" type="string" />
+		<![CDATA[? = call usd_channel_student_holds.f_check_hold(:pidm)]]> 
+	</sql-query>
+	
+	
+	<!--input ChildPIDM | ParentPidm  -->
+	<sql-query name="getParentPortalCookie" callable="true">
+		<return-scalar column="retVal" type="string" />
+		<![CDATA[? = call twbkbssf.f_encode(:combinedPidm)]]> 
+	</sql-query>
+	
+	<sql-query name="checkForDuplicateParent">
+	<return-scalar column="pidm" type="integer"/>
+	
+	<![CDATA[
+	
+	select PARENT_PIDM as pidm from baninst1.WEB4PARENT_XREF 
+	where
+	student_pidm=:childPidm
+	and
+	email_address = :parentEmailAddress
+	]]>
+	
+	</sql-query>
+
+	<sql-query name="checkIfParentIsLinkedToAnotherStudent">
+	<return-scalar column="pidm" type="integer"/>
+	
+	<![CDATA[
+	
+	select PARENT_PIDM as pidm from baninst1.WEB4PARENT_XREF 
+	where
+	student_pidm<>:childPidm
+	and
+	email_address = :parentEmailAddress
+	]]>
+	
+	</sql-query>
+	
+<sql-query name="checkDuplicateEmailAddress">
+<return-scalar column="pidm" type="integer"/>
+<![CDATA[
+select GOREMAL_PIDM as pidm from GOREMAL
+where GOREMAL_EMAIL_ADDRESS=:parentEmailAddress
+
+]]>
+
+
+
+
+</sql-query>
+
+
+<sql-query name="getParentAuthNumber">
+<return-scalar column="authNo" type="integer"/>
+<![CDATA[
+select x.BINARY_AUTH_INT as authNo from baninst1.WEB4PARENT_AUTH x
+where
+x.STUDENT_PIDM=:childPidm
+and
+x.PARENT_PIDM=:parentPidm
+]]>
+
+
+
+
+</sql-query>
+   
+	
+	
+
+	
+<!--input ChildPIDM | parenemail  -->
+
+<sql-query name="checkForDeuplicateParentLinkedToAnotherChild" callable="true">
+		<return-scalar column="retVal" type="string" />
+		<![CDATA[select PARENT_FIRST_NAME||' '||PARENT_LAST_NAME from WEB4PARENT_XREF where upper(email_address)=:parentEmail and student_pidm<>childPidm]]> 
+	</sql-query>	
+
+</hibernate-mapping>
