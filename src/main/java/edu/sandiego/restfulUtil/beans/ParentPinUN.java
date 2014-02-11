@@ -1,14 +1,11 @@
 package edu.sandiego.restfulUtil.beans;
 
 public class ParentPinUN {
-	
-	
-	  private String parent_pin;
-	  private String parent_id;
-	  private String email_address;
-	  
-	  
-	public String getParent_pin() {
+    private String parent_pin;
+	private String parent_id;
+	private String email_address;
+
+    public String getParent_pin() {
 		return parent_pin;
 	}
 	public void setParent_pin(String parent_pin) {
@@ -26,7 +23,5 @@ public class ParentPinUN {
 	public void setEmail_address(String email_address) {
 		this.email_address = email_address;
 	}
-	  
-	  
 
 }
