@@ -6,15 +6,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
-
-	private static SessionFactory basicSessionFactory;
+    private static SessionFactory basicSessionFactory;
 	public static Log log = LogFactory.getLog(HibernateUtil.class);
 
-	// hibernate uses org.hibernate.Configuration object to wraps all the
+    // hibernate uses org.hibernate.Configuration object to wraps all the
 	// configuration settings and is used to build sessionfactory object
 	@SuppressWarnings("deprecation")
 	public static SessionFactory getBasicSessionFactory() {
-		if (basicSessionFactory == null) {
+        if (basicSessionFactory == null) {
 			/*
 			 * NOTE:IMP Configure config = new Configure(); config.configure();
 			 * OR config.configure("com/go/anyname.cfg.xml"); if it does NOT
@@ -33,11 +32,9 @@ public class HibernateUtil {
 					.addResource("restfulUtil/beans/ParentInfo.hbm.xml")
 					.addResource("restfulUtil/beans/ChildInfo.hbm.xml")
 					.addResource("restfulUtil/beans/ParentPinUN.hbm.xml");
-
 			try {
 				basicSessionFactory = config.buildSessionFactory();
 			}
-
 			catch (Throwable e) {
 				// please log this exception
 				//System.err.println("Session##Factory creat_ion FaI_lier" + e);
@@ -45,14 +42,11 @@ public class HibernateUtil {
 				log.error(e.toString());
 				throw new ExceptionInInitializerError(e);
 			}
-
 			if (basicSessionFactory == null) {
 				log.error("not able to initialize session");
-
 			}
-		}
+        }
+        return basicSessionFactory;
+    }
 
-		return basicSessionFactory;
-
-	}
 }
