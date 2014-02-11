@@ -8,7 +8,7 @@ public class USDRESTfulUtilApplication extends Application {
 	
 	public USDRESTfulUtilApplication(){};
 	
-	public Set<Class<?>> getClasses(){
+	public Set<Class<?>> getClasses() {
 		HashSet<Class<?>> set = new HashSet<Class<?>>();
 		set.add(USDRESTfulUtil.class);
 		return set;
