@@ -4,8 +4,8 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-<!--input: PIDM  -->
-<sql-query name="getBannerID">
+    <!--input: PIDM  -->
+    <sql-query name="getBannerID">
         <return-scalar column="banner_id" type="string"/>
        <![CDATA[ select SPRIDEN_ID as banner_id
         from SPRIDEN
@@ -13,16 +13,13 @@
         and SPRIDEN_CHANGE_IND is null]]>
     </sql-query>
     
- 
-  
-    
     <!--input: username -->
-<sql-query name="getPidm_Username">
+    <sql-query name="getPidm_Username">
         <return-scalar column="gobtpac_pidm" type="int"/>
        <![CDATA[ select gobtpac_pidm from gobtpac where gobtpac_external_user=:username]]>
     </sql-query>
-    
-   <!--input Spriden/Banner ID  --> 
+
+    <!--input Spriden/Banner ID  -->
     <sql-query name="getPidm_SpridenID">
         <return-scalar column="pidm" type="integer"/>
        <![CDATA[
@@ -35,9 +32,9 @@
        
        ]]>
     </sql-query>
-    
+
     <!--input PIDM,BannerID  -->
-     <sql-query name="getRoles">
+    <sql-query name="getRoles">
         <return-scalar column="role" type="string"/>
         select gorirol_role as role
         from gorirol, spriden
@@ -45,11 +42,9 @@
         and SPRIDEN_CHANGE_IND is null
         and gorirol_pidm=spriden_pidm
     </sql-query>
-    
-    
-    
-     <!--input CRN,TERM  -->
-     <sql-query name="getSeatingChart">
+
+    <!--input CRN,TERM  -->
+    <sql-query name="getSeatingChart">
         <!-- <return-scalar column="room_no" type="string"/> -->
         <return-scalar column="room_no" type="string"/>
         <!-- <return-scalar column="banner_id" type="string"/>
@@ -70,16 +65,10 @@
 		<![CDATA[? = call usd_financial_aid_status.f_get_dispsumm(:pidm)]]> 
 	</sql-query>
 	
-	
-	
-	
-	
-	
-		<sql-query name="checkHold" callable="true">
+	<sql-query name="checkHold" callable="true">
 		<return-scalar column="retVal" type="string" />
 		<![CDATA[? = call usd_channel_student_holds.f_check_hold(:pidm)]]> 
 	</sql-query>
-	
 	
 	<!--input ChildPIDM | ParentPidm  -->
 	<sql-query name="getParentPortalCookie" callable="true">
@@ -88,69 +77,48 @@
 	</sql-query>
 	
 	<sql-query name="checkForDuplicateParent">
-	<return-scalar column="pidm" type="integer"/>
-	
-	<![CDATA[
-	
-	select PARENT_PIDM as pidm from baninst1.WEB4PARENT_XREF 
-	where
-	student_pidm=:childPidm
-	and
-	email_address = :parentEmailAddress
-	]]>
-	
+	    <return-scalar column="pidm" type="integer"/>
+        <![CDATA[
+        select PARENT_PIDM as pidm from baninst1.WEB4PARENT_XREF
+	    where
+	    student_pidm=:childPidm
+	    and
+	    email_address = :parentEmailAddress
+	    ]]>
 	</sql-query>
 
 	<sql-query name="checkIfParentIsLinkedToAnotherStudent">
-	<return-scalar column="pidm" type="integer"/>
+	    <return-scalar column="pidm" type="integer"/>
+	    <![CDATA[
+	    select PARENT_PIDM as pidm from baninst1.WEB4PARENT_XREF
+	    where
+	    student_pidm<>:childPidm
+	    and
+	    email_address = :parentEmailAddress
+	    ]]>
+    </sql-query>
 	
-	<![CDATA[
-	
-	select PARENT_PIDM as pidm from baninst1.WEB4PARENT_XREF 
-	where
-	student_pidm<>:childPidm
-	and
-	email_address = :parentEmailAddress
-	]]>
-	
-	</sql-query>
-	
-<sql-query name="checkDuplicateEmailAddress">
-<return-scalar column="pidm" type="integer"/>
-<![CDATA[
-select GOREMAL_PIDM as pidm from GOREMAL
-where GOREMAL_EMAIL_ADDRESS=:parentEmailAddress
+    <sql-query name="checkDuplicateEmailAddress">
+        <return-scalar column="pidm" type="integer"/>
+        <![CDATA[
+        select GOREMAL_PIDM as pidm from GOREMAL
+        where GOREMAL_EMAIL_ADDRESS=:parentEmailAddress
+        ]]>
+    </sql-query>
 
-]]>
-
-
-
-
-</sql-query>
-
-
-<sql-query name="getParentAuthNumber">
-<return-scalar column="authNo" type="integer"/>
-<![CDATA[
-select x.BINARY_AUTH_INT as authNo from baninst1.WEB4PARENT_AUTH x
-where
-x.STUDENT_PIDM=:childPidm
-and
-x.PARENT_PIDM=:parentPidm
-]]>
-
-
-
-
-</sql-query>
+    <sql-query name="getParentAuthNumber">
+        <return-scalar column="authNo" type="integer"/>
+        <![CDATA[
+        select x.BINARY_AUTH_INT as authNo from baninst1.WEB4PARENT_AUTH x
+        where
+        x.STUDENT_PIDM=:childPidm
+        and
+        x.PARENT_PIDM=:parentPidm
+        ]]>
+    </sql-query>
    
-	
-	
-
-	
-<!--input ChildPIDM | parenemail  -->
-
-<sql-query name="checkForDeuplicateParentLinkedToAnotherChild" callable="true">
+    <!--input ChildPIDM | parenemail  -->
+    <sql-query name="checkForDeuplicateParentLinkedToAnotherChild" callable="true">
 		<return-scalar column="retVal" type="string" />
 		<![CDATA[select PARENT_FIRST_NAME||' '||PARENT_LAST_NAME from WEB4PARENT_XREF where upper(email_address)=:parentEmail and student_pidm<>childPidm]]> 
 	</sql-query>	
