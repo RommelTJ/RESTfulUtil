@@ -1,7 +1,6 @@
 package edu.sandiego.restfulUtil.beans;
 
 public class ConfirmMealPlan {
-	
 	int pidm;
 	int ov_pidm;
 	float m_rate;
@@ -13,10 +12,6 @@ public class ConfirmMealPlan {
 	float pcc;
 	float pmin_dd;
 	float pmin_cc;
-	
-	
-	
-	
 	String m_ProAmt_str;
 	String m_new_plan;
 	String m_plan;
@@ -27,6 +22,7 @@ public class ConfirmMealPlan {
 	String p_term;
 	String p_titleiv;
 	String p_comments;
+
 	public int getPidm() {
 		return pidm;
 	}
@@ -153,7 +149,5 @@ public class ConfirmMealPlan {
 	public void setP_comments(String p_comments) {
 		this.p_comments = p_comments;
 	}
-	
-	
 
 }
