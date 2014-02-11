@@ -1,30 +1,16 @@
 package edu.sandiego.restfulUtil.beans;
 
-
-
-
 public class ChangeMealPlan {
-	
 	private String pmeal_code;
-	
 	private String p_term;
-	
 	private int pmeal_remain;
-	 
 	private int ov_pidm;
-	 
 	private float vcc;
-	 
 	private float vdd_40;
-	 
 	private float vdd_41;
-	 
 	private float vdd_45;
-	 
 	private String vmeal_future;
-	 
 	private String m_cs_ind;
-	 
 	private int pidm;
 
 	public String getPmeal_code() {
@@ -115,9 +101,4 @@ public class ChangeMealPlan {
 		this.pidm = pidm;
 	}
 	
-	
-	
-	
-	
-
 }
