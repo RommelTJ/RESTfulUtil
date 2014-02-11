@@ -3,14 +3,12 @@ package edu.sandiego.restfulUtil.beans;
 import edu.sandiego.restfulUtil.enumeration.MessageEnum;
 
 public class User {
-	
 	private String bannerId;
 	private String pidm;
 	public MessageEnum status;
 	private String errorDescription;
 	private String userAccountHold;
-	
-	
+
 	public User(){}
 	public String getBannerId() {
 		return bannerId;
@@ -42,11 +40,5 @@ public class User {
 	public void setUserAccountHold(String userAccountHold) {
 		this.userAccountHold = userAccountHold;
 	}
-	
-	
-	
-	
-	
-	
 
 }
