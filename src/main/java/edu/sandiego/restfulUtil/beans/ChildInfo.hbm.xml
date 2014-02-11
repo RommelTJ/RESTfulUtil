@@ -27,4 +27,5 @@
       and SPRIDEN_CHANGE_IND is null
       and w.PARENT_PIDM =:parentPidm
     </sql-query>
+
 </hibernate-mapping>
