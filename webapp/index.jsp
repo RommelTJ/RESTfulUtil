@@ -652,7 +652,7 @@
 		<input type="submit" value="Get Parent Info By EMail Address" id="getParentInfoByEmailAddress" onclick="getParentInfoByEmailAddress()" />
 		<br>
 		<br>
-		<select width="900" id="ParentDropDown" name="parentDropDown"></select>
+		<select width="900" id="ParentDropDownForEmail" name="parentDropDownForEmail"></select>
 		---------------------------------
 			<br>
 		<br>
