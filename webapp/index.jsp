@@ -673,7 +673,7 @@
 			<br>
 		<br>
 		email <input type="text" value="" id="emailForGetCheckDuplicateEmailAddress" name="emailForGetCheckDuplicateEmailAddress" />
-		<input type="submit" value="check for duplicate email address" id="callGetCreateNewParent" onclick="getCheckDuplicateEmailAddress()" />
+		<input type="submit" value="check for duplicate email address" id="callGetCheckDuplicateEmailAddress" onclick="getCheckDuplicateEmailAddress()" />
 		<br>
 		<br>
 				---------------------------------
