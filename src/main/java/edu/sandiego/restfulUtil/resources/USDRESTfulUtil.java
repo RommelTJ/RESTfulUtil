@@ -598,7 +598,7 @@ public class USDRESTfulUtil extends ServletContainer {
             String channelHtml="";
             SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
             Session session = sessionFactory.openSession();
-            channelHtml = session.getNamedQuery("getChannelHtml").setParameter("pidm",pidm.trim()).uniqueResult().toString();
+            channelHtml = session.getNamedQuery("get_banner_channel_html").setParameter("pidm",pidm.trim()).uniqueResult().toString();
             session.close();
             return channelHtml;
         }
