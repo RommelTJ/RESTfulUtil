@@ -541,7 +541,7 @@ public class USDRESTfulUtil extends ServletContainer {
         try {
             SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
             Session session = sessionFactory.openSession();
-            String value = session.getNamedQuery("checkForDeuplicateParent").setParameter("childPidm",childPidm.trim()).setParameter("parentEmail", parentEmail.toUpperCase().trim()).uniqueResult().toString();
+            String value = session.getNamedQuery("checkForDuplicateParent").setParameter("childPidm",childPidm.trim()).setParameter("parentEmail", parentEmail.toUpperCase().trim()).uniqueResult().toString();
             session.close();
             if(Integer.parseInt(value)>0)
                 isDuplicate =  Boolean.valueOf(true);
