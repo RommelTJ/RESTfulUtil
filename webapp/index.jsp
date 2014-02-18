@@ -689,7 +689,7 @@
 		<br>
 		parent pidm <input type="text" value="" id="parentPidmForGetParentAuthNumber" name="parentPidmForGetParentAuthNumber" />
 		child pidm <input type="text" value="" id="childPidmForGetParentAuthNumber" name="childPidmForGetParentAuthNumber" />
-		<input type="submit" value="get parent auth number" id="callGetParentPinAndUsername" onclick="getParentAuthNumber()" />
+		<input type="submit" value="get parent auth number" id="callGetParentAuthNumber" onclick="getParentAuthNumber()" />
 		<br>
 		<br>
 				---------------------------------	
