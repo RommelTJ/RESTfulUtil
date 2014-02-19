@@ -18,7 +18,7 @@
 	$.ajax({
 		type:"GET",
 		dataType:"text",
-		url:"http://localhost:8080/restfulUtil/getInfo/testrestfulutil",
+		url:"http://localhost:8080/getInfo/testrestfulutil",
 		success:function(response){
 			alert(response);},
 			error:function(response){alert(response.error);}
@@ -32,8 +32,7 @@
 	%>
 		
 	function getSeatingChart(){
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getBannerId";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getBannerId";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidm').val();
 		$.ajax({
@@ -48,8 +47,7 @@
 	}
 
 	function getLevelResd() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getLevelResd";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getLevelResd";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var id = $('#pidmForGetLevelResd').val();
 		$.ajax({
@@ -64,8 +62,7 @@
 	}
 	
 	function getInsertOnlineDepositChecklistAcknowledgement() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getInsertOnlineDepositChecklistAcknowledgement";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getInsertOnlineDepositChecklistAcknowledgement";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var id = $('#pidmForGetInsertOnlineDepositChecklistAcknowledgement').val();
 		$.ajax({
@@ -80,8 +77,7 @@
 	}//getInsertOnlineDepositChecklistAcknowledgement
 	
     function getDepositFlag() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getDepositFlag";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getDepositFlag";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var id = $('#pidmForGetDepositFlag').val();
 		$.ajax({
@@ -96,8 +92,7 @@
     }
 	
     function updateParentAuthNumber() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getUpdateParentAuthNumber";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getUpdateParentAuthNumber";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var parentPidm = $('#parentPidmForUpdateParentAuthNumber').val();
 		var childPidm = $('#childPidmForUpdateParentAuthNumber').val();
@@ -113,8 +108,7 @@
     }//updateParentAuthNumber
 	
 	function checkforDuplicateParent(){
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getCheckForDuplicateParent";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getCheckForDuplicateParent";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForCheckforDuplicateParent').val();
         alert(pidm);
@@ -130,8 +124,7 @@
     }//
 	
 	function getParentPinAndUsername() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getParentPinAndUsername";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getParentPinAndUsername";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForGetParentPinAndUsername').val();
 		alert(pidm);
@@ -148,8 +141,7 @@
     }
 
     function getParentAuthNumber() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getParentAuthNumber";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getParentAuthNumber";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var parentPidm = $('#parentPidmForGetParentAuthNumber').val();
 		var childPidm = $('#childPidmForGetParentAuthNumber').val();
@@ -166,8 +158,7 @@
     }//getParentAuthNumber
 	
 	function getCreateNewParent() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getCreateNewParent";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getCreateNewParent";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#emailForGetCreateNewParent').val();
 		alert(pidm);
@@ -183,8 +174,7 @@
     }
 	
     function getCheckDuplicateEmailAddress() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getCheckDuplicateEmailAddress";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getCheckDuplicateEmailAddress";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var email = $('#emailForGetCheckDuplicateEmailAddress').val();
 		alert(email);
@@ -200,8 +190,7 @@
     }//getCheckDuplicateEmailAddress
 	
 	function callGetChangeMealPlan() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getConfirmMealPlan";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getConfirmMealPlan";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForGetChangeMealPlam').val();
 		alert(pidm);
@@ -219,8 +208,7 @@
     }
 	
 	function callGetMealPlanOverride() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getMealPlanOverride";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getMealPlanOverride";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForGetMealPlanOverride').val();
 		alert(pidm);
@@ -236,8 +224,7 @@
     }
 	
 	function getOverrideStartPage() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getOverrideStartPage";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getOverrideStartPage";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForGetOverrideStartPage').val();
 		alert(pidm);
@@ -253,8 +240,7 @@
     }
 	
 	function callBannerProcedure() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/callBannerProcedure";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/callBannerProcedure";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForcallBannerProcedure').val();
 		alert(pidm);
@@ -271,8 +257,7 @@
     }
 
 	function getEmailAddress() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-        var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getEmailAddress";
+        var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getEmailAddress";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		var pidm = $('#pidmForGetEmailAddress').val();
 		$.ajax({
@@ -287,8 +272,7 @@
 	}
 
 	function getChannelMarkup() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getChannelWithAidy";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getChannelWithAidy";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		alert($('#pidmForGetChannelMarkup').val());
 		var pidm = $('#pidmForGetChannelMarkup').val();
@@ -306,8 +290,7 @@
     }
 	
 	function getChannelMarkupWithoutAidy() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getChannelWithoutAidy";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getChannelWithoutAidy";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getSeatingChart"; */
 		alert($('#pidmForGetChannelMarkupWithoutAidy').val());
 		var pidm = $('#pidmForGetChannelMarkupWithoutAidy').val();
@@ -324,7 +307,6 @@
     }
 
 	function enableAccess() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/webAccessEnabling"; */
 		var indicator = "N";
 		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/webAccessEnabling";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/webAccessEnabling"; */
@@ -341,7 +323,6 @@
 	}
 	
     function getPidm() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
 		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getPidm";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 		var id = $('#username1').val();
@@ -358,9 +339,8 @@
     }
 	
 	function checkHolds() {
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		/* var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/checkHolds";  */
-		var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/checkHolds";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/checkHolds";
+		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/checkHolds"; */
         var pidm = $('#pidmForCheckHolds').val();
 		$.ajax({
 			type:"POST",
@@ -374,8 +354,7 @@
     }
 	
 	function checkTranscriptHold() {
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/checkTranscriptHold";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/checkTranscriptHold";
 		/*  var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/checkTranscriptHold"; */
 		var pidm = $('#pidmForCheckTranscriptHold').val();
 		alert(pidm);
@@ -391,8 +370,7 @@
     }
 	
 	function getParentAuthNumberForParentView() {
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getParentAuthNumberForParentView";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getParentAuthNumberForParentView";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 		var childPidm = $('#getParentAuthNumberForParentViewChildPidm').val();
 		var parentPidm = $('#getParentAuthNumberForParentViewParentPidm').val();
@@ -410,8 +388,7 @@
     }
 	
 	function getParentInfo() {
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getParentInfo";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getParentInfo";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 		var pidm = $('#pidmForGetParentInfo').val();
         alert(pidm);
@@ -434,8 +411,7 @@
     }
 	
 	function getParentInfoByEmailAddress() {
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getParentInfoByEmailAddress";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getParentInfoByEmailAddress";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 		var email = $('#emailForGetParentInfoByEmailAddress').val();
 		alert(email);
@@ -458,8 +434,7 @@
     }
 
     function getLinkChildToAlreadyExistingParent() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-	    var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getLinkChildToAlreadyExistingParent";
+	    var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getLinkChildToAlreadyExistingParent";
 	    /* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 	    var email = $('#emailForGetLinkChildToAlreadyExistingParent').val();
 	    alert(email);
@@ -477,8 +452,7 @@
     }//getLinkChildToAlreadyExistingParent
 
     function getChildInfo() {
-        /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getChildInfo";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getChildInfo";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 		var pidm = $('#pidmForGetChildInfo').val();
 		alert(pidm);
@@ -500,8 +474,7 @@
     }
 	
 	function getRoles() {
-	    /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getRoles";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getRoles";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/testrestfulutil/getRoles"; */
 		var bannerId = $('#bannerId').val();
 		$.ajax({
@@ -731,5 +704,3 @@
 	
     </body>
 </html>
-
-
