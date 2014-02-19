@@ -28,10 +28,10 @@ public class HibernateUtil {
 			// Configuration config = new Configuration();
 
 			Configuration config = new Configuration()
-					.addResource("../resources/USD_Util.hbm.xml")
-					.addResource("restfulUtil/beans/ParentInfo.hbm.xml")
-					.addResource("restfulUtil/beans/ChildInfo.hbm.xml")
-					.addResource("restfulUtil/beans/ParentPinUN.hbm.xml");
+					.addResource("USD_Util.hbm.xml")
+					.addResource("edu/sandiego/restfulUtil/beans/ParentInfo.hbm.xml")
+					.addResource("edu/sandiego/restfulUtil/beans/ChildInfo.hbm.xml")
+					.addResource("edu/sandiego/restfulUtil/beans/ParentPinUN.hbm.xml");
 			try {
 				basicSessionFactory = config.buildSessionFactory();
 			}
