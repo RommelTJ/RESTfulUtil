@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="restfulUtil.beans.ParentInfo">
+	<class name="edu.sandiego.restfulUtil.beans.ParentInfo">
         <id name="pidm"/>
         <property name="childPidm"/>
         <property name="parent_first_name"/>
@@ -15,7 +15,7 @@
     </class>
 	
 	<sql-query name="getParentInfo">
-      <return alias="" class="restfulUtil.beans.ParentInfo">
+      <return alias="" class="edu.sandiego.restfulUtil.beans.ParentInfo">
         <return-property name="pidm" column="pidm"/>
         <return-property name="childPidm" column="childPidm"/>
         <return-property name="parent_first_name" column="firstName"/>
@@ -39,7 +39,7 @@
     </sql-query>
     
     <sql-query name="getParent_by_emailAddress">
-        <return alias="" class="restfulUtil.beans.ParentInfo">
+        <return alias="" class="edu.sandiego.restfulUtil.beans.ParentInfo">
         <return-property name="pidm" column="pidm"/>
         <return-property name="childPidm" column="childPidm"/>
         <return-property name="parent_last_name" column="lastName"/>

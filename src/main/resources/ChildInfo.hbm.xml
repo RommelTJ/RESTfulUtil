@@ -4,14 +4,14 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="restfulUtil.beans.ChildInfo">
+	<class name="edu.sandiego.restfulUtil.beans.ChildInfo">
         <id name="pidm"/>
         <property name="last_name"/>
         <property name="first_name"/>    
     </class>
 	
 	<sql-query name="getChildInfo">
-      <return alias="" class="restfulUtil.beans.ChildInfo">
+      <return alias="" class="edu.sandiego.restfulUtil.beans.ChildInfo">
         <return-property name="pidm" column="pidm"/>
         <return-property name="last_name" column="lastname"/>
         <return-property name="first_name" column="firstname"/>   

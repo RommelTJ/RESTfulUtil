@@ -4,14 +4,14 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="restfulUtil.beans.ParentPinUN">
+	<class name="edu.sandiego.restfulUtil.beans.ParentPinUN">
         <id name="parent_id"/>
         <property name="parent_pin"/>
         <property name="email_address"></property>
     </class>
 	
 	<sql-query name="get_parent_ID_info">
-        <return alias="" class="restfulUtil.beans.ParentPinUN">
+        <return alias="" class="edu.sandiego.restfulUtil.beans.ParentPinUN">
         <return-property name="parent_id" column="parentId"/>
         <return-property name="parent_pin" column="parentPin"/>
         <return-property name="email_address" column="emailAddress"/>
