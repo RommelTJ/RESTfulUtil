@@ -7,7 +7,7 @@
 	<class name="edu.sandiego.restfulUtil.beans.ParentPinUN">
         <id name="parent_id"/>
         <property name="parent_pin"/>
-        <property name="email_address"></property>
+        <property name="email_address"/>
     </class>
 	
 	<sql-query name="get_parent_ID_info">

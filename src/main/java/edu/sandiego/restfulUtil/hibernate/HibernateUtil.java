@@ -29,9 +29,9 @@ public class HibernateUtil {
 
 			Configuration config = new Configuration()
 					.addResource("USD_Util.hbm.xml")
-					.addResource("ParentInfo.hbm.xml")
-					.addResource("ChildInfo.hbm.xml")
-					.addResource("ParentPinUN.hbm.xml");
+					.addResource("edu/sandiego/restfulUtil/beans/ParentInfo.hbm.xml")
+					.addResource("edu/sandiego/restfulUtil/beans/ChildInfo.hbm.xml")
+					.addResource("edu/sandiego/restfulUtil/beans/ParentPinUN.hbm.xml");
 			try {
 				basicSessionFactory = config.buildSessionFactory();
 			}
