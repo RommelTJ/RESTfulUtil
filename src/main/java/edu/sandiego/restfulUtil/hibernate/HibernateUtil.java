@@ -28,7 +28,7 @@ public class HibernateUtil {
 			// Configuration config = new Configuration();
 
 			Configuration config = new Configuration()
-					.addResource("USD_Util.hbm.xml")
+					.addResource("../resources/USD_Util.hbm.xml")
 					.addResource("restfulUtil/beans/ParentInfo.hbm.xml")
 					.addResource("restfulUtil/beans/ChildInfo.hbm.xml")
 					.addResource("restfulUtil/beans/ParentPinUN.hbm.xml");

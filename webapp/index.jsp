@@ -11,7 +11,7 @@
 
 <html>
     <body>
-	<script type="text/javascript" src="/restfulUtil/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-2.0.3.min.js"></script>
 	<script>
 	/* $(document).ready(function(){
 	    alert("ready");
@@ -342,7 +342,7 @@
 	
     function getPidm() {
         /* var rootUrl = "http://dgz0xls1:8080/restfulUtil/getInfo/testrestfulutil/getRoles"; */
-		var rootUrl = "http://localhost:8080/restfulUtil/getInfo/USDRESTfulUtil/getPidm";
+		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getPidm";
 		/* var rootUrl = "http://allproxy.sandiego.edu/restfulUtil/getInfo/USDRESTfulUtil/getPidm"; */
 		var id = $('#username1').val();
 		alert(id);
