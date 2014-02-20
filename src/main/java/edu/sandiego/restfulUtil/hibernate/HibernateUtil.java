@@ -27,11 +27,12 @@ public class HibernateUtil {
 			// classpath.
 			// Configuration config = new Configuration();
 
-			Configuration config = new Configuration()
-					.addResource("USD_Util.hbm.xml")
-					.addResource("edu/sandiego/restfulUtil/beans/ParentInfo.hbm.xml")
-					.addResource("edu/sandiego/restfulUtil/beans/ChildInfo.hbm.xml")
-					.addResource("edu/sandiego/restfulUtil/beans/ParentPinUN.hbm.xml");
+            //System.out.println("Working Directory = " + System.getProperty("user.dir"));
+			Configuration config = new Configuration();
+            config.addResource("USD_Util.hbm.xml");
+            config.addResource("edu/sandiego/restfulUtil/beans/ParentInfo.hbm.xml");
+            config.addResource("edu/sandiego/restfulUtil/beans/ChildInfo.hbm.xml");
+            config.addResource("edu/sandiego/restfulUtil/beans/ParentPinUN.hbm.xml");
 			try {
 				basicSessionFactory = config.buildSessionFactory();
 			}
