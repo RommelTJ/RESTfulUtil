@@ -218,7 +218,8 @@ public class UserBusinessObject {
 			Session session = sessionFactory.openSession();
 			Query query = session.getNamedQuery("getPidm_SpridenID").setParameter("id",id.trim());
 			pidm = query.uniqueResult().toString();
-			if(pidm==null) {
+			if(pidm==null)
+            {
 			    user.setStatus(MessageEnum.NOTFOUND);
 				user.setErrorDescription("Usernae Does not exist in Database.");
 				return user;

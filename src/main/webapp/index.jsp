@@ -328,6 +328,8 @@
 				error:function(){alert("error");}
 		});
     }
+
+
 	
 	function checkHolds() {
 		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/checkHolds";
