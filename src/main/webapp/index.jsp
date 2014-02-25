@@ -329,7 +329,19 @@
 		});
     }
 
-
+    function getTerms() {
+        var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getTerms";
+        var pidm = $('#pidmForGetTerms').val();
+        $.ajax({
+            type:"POST",
+            dataType:"text",
+            data:"pidm="+pidm,
+            url:rootUrl,
+            success:function(response){
+                alert(response);},
+            error:function(){alert("error");}
+        });
+    }
 	
 	function checkHolds() {
 		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/checkHolds";
@@ -693,6 +705,13 @@
 		<br>
 		<br>
 				---------------------------------
+    <br>
+    <br>
+    <label for="pidmForGetTerms">PIDM</label> <input type="text" value="" id="pidmForGetTerms" name="pidmForGetTerms" />
+    <input type="submit" value="Get Terms" id="getTerms" onclick="getTerms()" />
+    <br>
+    <br>
+    ---------------------------------
 	
     </body>
 </html>

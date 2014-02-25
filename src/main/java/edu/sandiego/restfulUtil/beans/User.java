@@ -8,6 +8,7 @@ public class User {
 	public MessageEnum status;
 	private String errorDescription;
 	private String userAccountHold;
+    private String[] terms;
 
 	public User(){}
 	public String getBannerId() {
@@ -40,5 +41,11 @@ public class User {
 	public void setUserAccountHold(String userAccountHold) {
 		this.userAccountHold = userAccountHold;
 	}
+    public String[] getTerms() {
+        return terms;
+    }
+    public void setTerms(String[] terms) {
+        this.terms = terms;
+    }
 
 }

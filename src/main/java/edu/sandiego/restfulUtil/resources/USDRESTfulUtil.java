@@ -582,7 +582,7 @@ public class USDRESTfulUtil extends ServletContainer {
 	public Response getParentPinAndUsername(@FormParam("parentPidm") String parentPidm) {
         ParentPinUN parentInfo = new ParentPinUN();
 		parentInfo = UserBusinessObject.getParentPinAndUsername(parentPidm);
-		ResponseBuilder builder =Response.ok(parentInfo);
+		ResponseBuilder builder = Response.ok(parentInfo);
 		return builder.build();
     }
     //############################################ Parent Portal Services Stop ###############################################################
@@ -651,5 +651,23 @@ public class USDRESTfulUtil extends ServletContainer {
 		session.close();
 		return jO.toString();
 	}
+
+    @POST
+    @Path("/getTerms")
+    @Produces("text/plain")
+    public String[] getTerms(@FormParam("pidm") String pidm) throws InvalidInputException {
+        int pidmInt;
+        if(pidm.getClass()!="String".getClass()) {
+            throw new InvalidInputException("Invalid Pidm Type");
+        }
+        try {
+            pidmInt = Integer.parseInt(pidm);
+        }
+        catch(Throwable e) {
+            throw new InvalidInputException("invalid pidm");
+        }
+        //String[] terms = UserBusinessObject.getTerms(pidm);
+        return UserBusinessObject.getTerms(pidm);
+    }
 
 }
