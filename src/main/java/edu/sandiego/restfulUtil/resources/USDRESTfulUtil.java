@@ -655,19 +655,13 @@ public class USDRESTfulUtil extends ServletContainer {
     @POST
     @Path("/getTerms")
     @Produces("text/plain")
-    public String[] getTerms(@FormParam("pidm") String pidm) throws InvalidInputException {
-        int pidmInt;
-        if(pidm.getClass()!="String".getClass()) {
-            throw new InvalidInputException("Invalid Pidm Type");
-        }
+    public String getTerms(@FormParam("pidm") String pidm) throws InvalidInputException {
         try {
-            pidmInt = Integer.parseInt(pidm);
+            return UserBusinessObject.getTerms(pidm);
         }
         catch(Throwable e) {
             throw new InvalidInputException("invalid pidm");
         }
-        //String[] terms = UserBusinessObject.getTerms(pidm);
-        return UserBusinessObject.getTerms(pidm);
     }
 
 }

@@ -749,83 +749,24 @@ public class UserBusinessObject {
     } //****getChannelMarkupWithoutAidy stop
 
     //*****************************************    getTerms  Start  *************************************************
-    public static String[] getTerms(String pidm) {
-        User user = new User();
-        //String checkHoldMessage;
-        //Transaction tx =null;
-        String[] termsForPidm = null;
-        Transaction tx=null;
-        try{
+    public static String getTerms(String pidm) {
+        String terms = "N/A";
+        try {
             SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
             Session session = sessionFactory.openSession();
-            Query query = session.getNamedQuery("getTerms").setParameter("pidm", pidm.trim());
-            int size = query.list().size();
-            termsForPidm = (String[]) query.list().toArray(new String[size]);
-            //pidm = query.uniqueResult().toString();
-            if(termsForPidm==null)
-            {
-                //user.setStatus(MessageEnum.NOTFOUND);
-                log.error("User does not have terms in shrtgpa.");
-                return termsForPidm;
-            }
-            //user.setPidm(pidm);
-            //user.setStatus(MessageEnum.OK);
-            //return termsForPidm;
+            List<String> list = session.getNamedQuery("getTerms").setParameter("pidm",pidm.trim()).list();
+            //System.out.println(list.toString());
+            //System.out.println("isDuplicate Count:----->: "+list.size());
             session.close();
-            return termsForPidm;
-        }
-        catch(JDBCException jE) {
-            //user.setStatus(MessageEnum.ERROR);
-            //user.setErrorDescription(jE.getMessage());
-            log.error(jE.getMessage());
-            log.error(jE.toString());
-            jE.printStackTrace();
+            if(list.size()>0)
+                terms =  list.toString();
         }
         catch(Exception e) {
-            //user.setStatus(MessageEnum.ERROR);
-            //user.setErrorDescription(e.getMessage());
+            System.out.println("exception!!--->>>: "+e.getMessage());
             log.error(e.getMessage());
-            log.error(e.toString());
             e.printStackTrace();
         }
-        /*try {
-            SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
-            Session session = sessionFactory.openSession();
-            //to call stored function in DB using hibernate is through session.connection(), the only way to grab jdbc connection out of session in hibernate
-            tx = session.beginTransaction();
-            Connection con = session.connection();
-            CallableStatement cs = con.prepareCall("{? = call usd_channel_student_holds.f_check_hold(?)}");
-            cs.registerOutParameter(1, Types.VARCHAR);
-            cs.setInt(2, pidm);
-            cs.execute();
-            checkHoldMessage = cs.getString(1);
-            tx.commit();
-            if(checkHoldMessage==null) {
-                user.setStatus(MessageEnum.NOTFOUND);
-                user.setErrorDescription("Username Does not exist in Database.");
-                return user;
-            }
-            user.setUserAccountHold(checkHoldMessage);
-            user.setStatus(MessageEnum.OK);
-            session.close();
-        }
-        catch(JDBCException jE) {
-            user.setStatus(MessageEnum.ERROR);
-            user.setErrorDescription(jE.getMessage());
-            log.error(jE.getMessage());
-            log.error(jE.toString());
-            jE.printStackTrace();
-        }
-        catch(Exception e) {
-            user.setStatus(MessageEnum.ERROR);
-            user.setErrorDescription(e.getMessage());
-            log.error(e.getMessage());
-            log.error(e.toString());
-            e.printStackTrace();
-        }
-        return user;*/
-        //return termsForPidm;
-        return termsForPidm;
+        return terms;
     }
     //*****************************************    getTerms  Stop  *************************************************
 	
