@@ -657,7 +657,7 @@ public class USDRESTfulUtil extends ServletContainer {
     @Produces("text/plain")
     public String getTerms(@FormParam("pidm") String pidm) throws InvalidInputException {
         try {
-            return UserBusinessObject.getTerms(pidm);
+            return UserBusinessObject.getTerms(pidm).toString();
         }
         catch(Throwable e) {
             throw new InvalidInputException("invalid pidm");

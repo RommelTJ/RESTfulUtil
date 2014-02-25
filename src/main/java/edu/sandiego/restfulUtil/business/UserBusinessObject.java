@@ -749,15 +749,15 @@ public class UserBusinessObject {
     } //****getChannelMarkupWithoutAidy stop
 
     //*****************************************    getTerms  Start  *************************************************
-    public static String getTerms(String pidm) {
-        String terms = "N/A";
+    public static List<String> getTerms(String pidm) {
+        List<String> terms = new ArrayList<String>();
         try {
             SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
             Session session = sessionFactory.openSession();
-            List<String> list = session.getNamedQuery("getTerms").setParameter("pidm",pidm.trim()).list();
+            terms = session.getNamedQuery("getTerms").setParameter("pidm",pidm.trim()).list();
             session.close();
-            if(list.size()>0)
-                terms =  list.toString();
+            //if(list.size()>0)
+                //terms =  (String[]) list.toArray();
         }
         catch(Exception e) {
             System.out.println("exception!!--->>>: "+e.getMessage());
