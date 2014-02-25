@@ -676,4 +676,16 @@ public class USDRESTfulUtil extends ServletContainer {
         }
     }
 
+    @POST
+    @Path("/getTotalEarnedCredits")
+    @Produces("text/plain")
+    public String getTotalEarnedCredits(@FormParam("pidm") String pidm) throws InvalidInputException {
+        try {
+            return UserBusinessObject.getTotalEarnedCredits(pidm).toString();
+        }
+        catch(Throwable e) {
+            throw new InvalidInputException("invalid pidm");
+        }
+    }
+
 }

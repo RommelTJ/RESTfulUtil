@@ -341,7 +341,7 @@
                 alert(response);},
             error:function(){alert("error");}
         });
-    }
+    } //getTerms
 
     function getGPAForTerm() {
         var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getGPAForTerm";
@@ -357,6 +357,20 @@
             error:function(error){alert(error);}
         });
     }//getGPAForTerm
+
+    function getTotalEarnedCredits() {
+        var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getTotalEarnedCredits";
+        var pidm = $('#pidmForGetTotalEarnedCredits').val();
+        $.ajax({
+            type:"POST",
+            dataType:"text",
+            data:"pidm="+pidm,
+            url:rootUrl,
+            success:function(response){
+                alert(response);},
+            error:function(){alert("error");}
+        });
+    } //getTotalEarnedCredits
 	
 	function checkHolds() {
 		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/checkHolds";
@@ -732,6 +746,13 @@
     <label for="pidmForGetGPAForTerm">PIDM</label> <input type="text" value="" id="pidmForGetGPAForTerm" name="pidmForGetGPAForTerm" />
     <label for="termCode">Term Code (e.g. 201409)</label> <input type="text" value="" id="termCode" name="termCode" />
     <input type="submit" value="Get GPA For Term" id="getGPAForTerm" onclick="getGPAForTerm()" />
+    <br>
+    <br>
+    ---------------------------------
+    <br>
+    <br>
+    <label for="pidmForGetTotalEarnedCredits">PIDM</label> <input type="text" value="" id="pidmForGetTotalEarnedCredits" name="pidmForGetTotalEarnedCredits" />
+    <input type="submit" value="Get Sum of Credits Earned" id="getTotalEarnedCredits" onclick="getTotalEarnedCredits()" />
     <br>
     <br>
     ---------------------------------

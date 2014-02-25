@@ -785,6 +785,24 @@ public class UserBusinessObject {
         return gpa;
     }
     //*****************************************    getGPAForTerm  Stop  ********************************************
+
+    //*************************************    getTotalEarnedCredits  Start  ***************************************
+    public static Integer getTotalEarnedCredits(String pidm) {
+        Integer totalHours = 0;
+        try {
+            SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
+            Session session = sessionFactory.openSession();
+            totalHours = (Integer) session.getNamedQuery("getTotalEarnedCredits").setParameter("pidm",pidm.trim()).uniqueResult();
+            session.close();
+        }
+        catch(Exception e) {
+            System.out.println("exception!!--->>>: "+e.getMessage());
+            log.error(e.getMessage());
+            e.printStackTrace();
+        }
+        return totalHours;
+    }
+    //*************************************    getTotalEarnedCredits  Stop  ****************************************
 	
     //*****************************************    getParentPortalCookie  Start  *************************************************
 	public static String getParentPortalCookie(String childPidm, String parentPidm) {
