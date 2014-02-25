@@ -664,4 +664,16 @@ public class USDRESTfulUtil extends ServletContainer {
         }
     }
 
+    @POST
+    @Path("/getGPAForTerm")
+    @Produces("text/plain")
+    public String getGPAForTerm(@FormParam("pidm") String pidm, @FormParam("term") String term) throws InvalidInputException {
+        try {
+            return UserBusinessObject.getGPAForTerm(pidm, term).toString();
+        }
+        catch(Throwable e) {
+            throw new InvalidInputException("invalid input");
+        }
+    }
+
 }

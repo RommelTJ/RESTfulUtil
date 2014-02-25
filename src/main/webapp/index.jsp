@@ -342,6 +342,21 @@
             error:function(){alert("error");}
         });
     }
+
+    function getGPAForTerm() {
+        var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/getGPAForTerm";
+        var pidm = $('#pidmForGetGPAForTerm').val();
+        var term = $('#termCode').val();
+        $.ajax({
+            type:"POST",
+            dataType:"text",
+            data:{pidm:pidm,term:term},
+            url:rootUrl,
+            success:function(response){
+                alert(response);},
+            error:function(error){alert(error);}
+        });
+    }//getGPAForTerm
 	
 	function checkHolds() {
 		var rootUrl = "http://localhost:8080/getInfo/USDRESTfulUtil/checkHolds";
@@ -712,6 +727,14 @@
     <br>
     <br>
     ---------------------------------
-	
+    <br>
+    <br>
+    <label for="pidmForGetGPAForTerm">PIDM</label> <input type="text" value="" id="pidmForGetGPAForTerm" name="pidmForGetGPAForTerm" />
+    <label for="termCode">Term Code (e.g. 201409)</label> <input type="text" value="" id="termCode" name="termCode" />
+    <input type="submit" value="Get GPA For Term" id="getGPAForTerm" onclick="getGPAForTerm()" />
+    <br>
+    <br>
+    ---------------------------------
+
     </body>
 </html>

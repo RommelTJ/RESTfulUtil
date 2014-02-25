@@ -755,8 +755,6 @@ public class UserBusinessObject {
             SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
             Session session = sessionFactory.openSession();
             List<String> list = session.getNamedQuery("getTerms").setParameter("pidm",pidm.trim()).list();
-            //System.out.println(list.toString());
-            //System.out.println("isDuplicate Count:----->: "+list.size());
             session.close();
             if(list.size()>0)
                 terms =  list.toString();
@@ -769,6 +767,24 @@ public class UserBusinessObject {
         return terms;
     }
     //*****************************************    getTerms  Stop  *************************************************
+
+    //*****************************************    getGPAForTerm  Start  *******************************************
+    public static Double getGPAForTerm(String pidm, String term) {
+        Double gpa = 0.0;
+        try {
+            SessionFactory sessionFactory = HibernateUtil.getBasicSessionFactory();
+            Session session = sessionFactory.openSession();
+            gpa = (Double) session.getNamedQuery("getGPAForTerm").setParameter("pidm",pidm.trim()).setParameter("term",term.trim()).uniqueResult();
+            session.close();
+        }
+        catch(Exception e) {
+            System.out.println("exception!!--->>>: "+e.getMessage());
+            log.error(e.getMessage());
+            e.printStackTrace();
+        }
+        return gpa;
+    }
+    //*****************************************    getGPAForTerm  Stop  ********************************************
 	
     //*****************************************    getParentPortalCookie  Start  *************************************************
 	public static String getParentPortalCookie(String childPidm, String parentPidm) {
